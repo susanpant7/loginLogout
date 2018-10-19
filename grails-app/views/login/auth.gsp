@@ -47,7 +47,12 @@
             url:'${createLink(controller:'loginLogout', action: 'loginBox')}',
             data:"aa",
             success:function (data) {
-                $.fancybox.open(data);
+                $.fancybox.open(data,{
+                    // width: 400,
+                    // height: 400,
+                    autoSize: true,
+                    touch:false
+                });
             }
         });
         /*$("#fancybox").fancybox({

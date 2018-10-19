@@ -20,7 +20,7 @@
         border-radius: 6px;
         height: 400px;
         margin: 20px auto 0;
-        width: 400px;
+        width: 500px;
     }
     .login h1 {
         background-image: linear-gradient(top, #f1f3f3, #d4dae0);
@@ -104,7 +104,7 @@
         text-align:center;
         text-shadow:1px 1px 0px #37a69b;
         padding-top:6px;
-        margin: 29px 0 0 29px;
+        margin: 29px 0 0 110px;
         position:relative;
         cursor:pointer;
         border: none;
@@ -137,10 +137,19 @@
 
 <body>
 <div class="login">
-    <input type="text" placeholder="Username" id="username">
-    <input type="password" placeholder="password" id="password">
-    <a href="#" class="forgot">forgot password?</a>
-    <input type="submit" value="Sign In">
+    <form action="${postUrl ?: '/login/authenticate'}" method="POST" id="loginForm" class="cssform" autocomplete="off">
+        <p>
+            <label for="username"><g:message code='springSecurity.login.username.label'/>:</label>
+            <input type="text" class="text_" name="${usernameParameter ?: 'username'}" id="username"/>
+        </p>
+
+        <p>
+            <label for="password"><g:message code='springSecurity.login.password.label'/>:</label>
+            <input type="password" class="text_" name="${passwordParameter ?: 'password'}" id="password"/>
+        </p>
+        <a href="#" class="forgot">forgot password?</a>
+        <input type="submit" id="submit" value="Log IN" style="text-align: center">
+    </form>
 </div>
 <div class="shadow"></div>
 
